@@ -1,0 +1,29 @@
+.three_columns {
+  display: flex;
+  text-align: center;
+  height: 384px;
+  background-color: $color-three-columns;
+  align-items: center;
+  justify-content: space-around;
+  .column_article {
+    max-width: 334px;
+
+    h2 {
+      font-size: 5.625rem;
+      color: $color-brown;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.125;
+      color: $color-fonts;
+      letter-spacing: -0.36px;
+      margin-bottom: 28px;
+    }
+    article {
+      color: $color-fonts;
+      font-size: 1rem;
+      letter-spacing: -0.32px;
+    }
+  }
+}

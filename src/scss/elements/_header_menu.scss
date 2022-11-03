@@ -1,0 +1,53 @@
+.home_header {
+  .header_menu {
+    .menu_navigation {
+      .header_login_register {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 46px;
+
+        li:first-child {
+          margin-right: 30px;
+        }
+        li {
+          border: 1px solid transparent;
+          padding: 9px 10px;
+          &:hover {
+            border-color: $color-three-columns;
+          }
+          a {
+            color: $color-dark-grey;
+            font-size: 0.875;
+          }
+        }
+      }
+      .menu {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 25px;
+
+        li {
+          text-align: left;
+          font: normal 1.125rem Open Sans;
+          justify-content: center;
+          display: flex;
+          border: 1px solid transparent;
+          &:hover {
+            border-color: $color-fonts;
+            cursor: pointer;
+          }
+          a {
+            color: $color-fonts;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 9px 20px;
+          }
+        }
+        li:last-child {
+          margin-right: -11px;
+        }
+      }
+    }
+  }
+}

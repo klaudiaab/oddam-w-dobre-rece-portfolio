@@ -1,0 +1,48 @@
+.article_section {
+    display: flex;
+    #household_things {
+      background-image: url("../../assets/images/Home-Hero-Image.jpg");
+      left: -483px;
+      width: 1368px;
+      height: 963px;
+      background-position: right;
+    }
+    .article {
+      margin-top: 210px;
+      margin-right: 133px;
+      text-align: center;
+  
+      h1 {
+        font-size: 2.375rem;
+        color: $color-fonts;
+      }
+      #text_decoration {
+        margin-top: 25px;
+        margin-bottom: 78px;
+      }
+      .register_and_login {
+        display: flex;
+  
+        li {
+          border: 0.75px solid $color-fonts;
+          width: 310px;
+          height: 120px;
+          display: flex;
+          justify-content: center;
+  
+          a {
+            font-size: 2.25rem;
+            align-items: center;
+            display: flex;
+            font-weight: 300;
+            color: $color-fonts;
+            margin: 13px 51px;
+            text-transform: uppercase;
+          }
+        }
+        li:first-child {
+          margin-right: 44px;
+        }
+      }
+    }
+  }

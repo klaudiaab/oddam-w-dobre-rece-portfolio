@@ -1,0 +1,26 @@
+@import "./generic/reset.scss";
+@import "./settings/fonts.scss";
+@import "./settings/mixins";
+@import "./settings/colors";
+@import "./elements/header_menu";
+@import "./elements/header_article";
+@import "./elements/three_columns";
+
+body {
+  font-family: $font-base;
+  background-color: #ffffff;
+  max-width: 1900px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+.container {
+  margin-right: 142px;
+}
