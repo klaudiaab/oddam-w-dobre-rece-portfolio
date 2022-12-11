@@ -15,6 +15,9 @@
           &:hover {
             border-color: $color-three-columns;
           }
+          &:visited {
+            border-color: $color-three-columns;
+          }
           a {
             color: $color-dark-grey;
             font-size: 0.875;
