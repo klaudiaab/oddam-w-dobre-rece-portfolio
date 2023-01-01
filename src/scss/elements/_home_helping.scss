@@ -45,4 +45,26 @@
     justify-self: center;
     margin: auto;
   }
+  .companies {
+  }
+  .paginationBttnS {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    a {
+      color: red;
+      padding: 10px;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+    a:hover {
+      color: blue;
+    }
+  }
+  .paginationActive a {
+    background-color: red;
+  }
 }
