@@ -14,19 +14,10 @@ function LocalCollections({
   const changePage = ({ selected }) => {
     setpagenumber(selected);
   };
-  if (paginate === "local_collections") {
-    return (
-      <>
-        <div
-          className="local_collections companies"
-          localcollections={localcollections}
-        >
-          {localcollections
-            .slice(pageVisited, pageVisited + userPerPage)
-            .map((user) => {
-              return <li key={user.id}>{user.local_collection}</li>;
-            })}
-        </div>
+
+  const displayPagination = () => {
+    if (localcollections.length > 3) {
+      return (
         <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={"Next"}
@@ -40,9 +31,53 @@ function LocalCollections({
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActive"}
         ></ReactPaginate>
-      </>
-    );
-  }
+      );
+    }
+  };
+  return (
+    <>
+      <div
+        className="local_collections company_styles"
+        localcollections={localcollections}
+        paginate={paginate}
+      >
+        {localcollections
+          .slice(pageVisited, pageVisited + userPerPage)
+          .map((user) => {
+            if (localcollections.length <= 3) {
+              return (
+                <li
+                  key={user.id}
+                  className="all_companies"
+                  id="display_none_pagination"
+                >
+                  {user.local_collection}
+                  <p className="necessary_things">{user.necessary_things}</p>
+                  <p className="mission">{user.mission}</p>
+
+                  <hr></hr>
+                </li>
+              );
+            }
+            if (localcollections.length > 3)
+              return (
+                <li
+                  key={user.id}
+                  id="display_pagination"
+                  className="all_companies"
+                >
+                  {user.local_collection}
+                  <p className="necessary_things">{user.necessary_things}</p>
+                  <p className="mission">{user.mission}</p>
+
+                  <hr></hr>
+                </li>
+              );
+          })}
+        {displayPagination()}
+      </div>
+    </>
+  );
 }
 
 export default LocalCollections;

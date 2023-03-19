@@ -9,21 +9,9 @@ function Organizations({ organizations, paginate, pagenumber, setpagenumber }) {
   const changePage = ({ selected }) => {
     setpagenumber(selected);
   };
-  if (paginate === "organizations") {
-    return (
-      <>
-        <div className="organizations companies" organizations={organizations}>
-          {organizations
-            .slice(pageVisited, pageVisited + userPerPage)
-            .map((user) => {
-              return (
-                <li key={user.id}>
-                  {user.organization}
-                  <br></br>
-                </li>
-              );
-            })}
-        </div>
+  const displayPagination = () => {
+    if (organizations.length > 3) {
+      return (
         <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={"Next"}
@@ -37,6 +25,51 @@ function Organizations({ organizations, paginate, pagenumber, setpagenumber }) {
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActive"}
         ></ReactPaginate>
+      );
+    }
+  };
+  if (paginate === "organizations") {
+    return (
+      <>
+        <div
+          className="organizations company_styles"
+          organizations={organizations}
+          paginate={paginate}
+        >
+          {organizations
+            .slice(pageVisited, pageVisited + userPerPage)
+            .map((user) => {
+              if (organizations.length <= 3) {
+                return (
+                  <li
+                    key={user.id}
+                    className="all_companies"
+                    id="display_none_pagination"
+                  >
+                    {user.organization}{" "}
+                    <p className="necessary_things">{user.necessary_things}</p>
+                    <p className="mission">Cel i misja: {user.mission}</p>
+                    <hr></hr>
+                  </li>
+                );
+              }
+              if (organizations.length > 3) {
+                return (
+                  <li
+                    key={user.id}
+                    id="display_pagination"
+                    className="all_companies"
+                  >
+                    {user.organization}{" "}
+                    <p className="necessary_things">{user.necessary_things}</p>
+                    <p className="mission">Cel i misja: {user.mission}</p>
+                    <hr></hr>
+                  </li>
+                );
+              }
+            })}
+          {displayPagination()}
+        </div>
       </>
     );
   }

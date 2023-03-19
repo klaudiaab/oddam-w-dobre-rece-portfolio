@@ -45,7 +45,27 @@
     justify-self: center;
     margin: auto;
   }
-  .companies {
+  .homeHelping_companies {
+    color: $color-fonts;
+    .company_styles {
+      margin: 30px;
+      .all_companies {
+        list-style: none;
+        font-size: 1.625rem;
+        p {
+          font-size: 1.125rem;
+        }
+        .necessary_things {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: -9px;
+        }
+        hr {
+          margin-top: 31px;
+          margin-bottom: 34px;
+        }
+      }
+    }
   }
   .paginationBttnS {
     width: 80%;
@@ -55,16 +75,19 @@
     justify-content: center;
     margin: auto;
     a {
-      color: red;
+      color: $color-fonts;
+      font-size: 1.125rem;
       padding: 10px;
-      border: 1px solid black;
+      margin-right: 37px;
       cursor: pointer;
+      border: 1px solid transparent;
+      outline: none;
     }
     a:hover {
-      color: blue;
+      border: 1px solid $color-paginate-active;
     }
   }
   .paginationActive a {
-    background-color: red;
+    border: 1px solid $color-paginate-active;
   }
 }
